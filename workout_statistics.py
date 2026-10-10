@@ -11,6 +11,7 @@ def count_calories(avg_heartbeat, weight, age, duration, gender):
             / 4.184
         ) * duration
 
+
     elif gender == "F":
         calories = (
             (-20.4022 +
@@ -24,6 +25,8 @@ def count_calories(avg_heartbeat, weight, age, duration, gender):
         raise ValueError("A gender csak 'M' vagy 'F' lehet.")
 
     return calories
+
+
 
 def test_count_calories_male():
     result = count_calories(140, 80, 30, 60, "M")
@@ -57,3 +60,4 @@ def test_count_calories_zero_duration():
     result = count_calories(140, 80, 30, 0, "M")
 
     assert result == 0
+
